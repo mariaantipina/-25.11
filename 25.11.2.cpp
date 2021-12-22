@@ -1,21 +1,24 @@
 #include <iostream>
-#include <string>
-#include <sstream> 
+#include <cstring>
 using namespace std;
-
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    int sum = 0, number;
-    string s;
-    cout << "введите строку:" << endl;
-    getline(cin, s);
+    char equation[500];
+    long long  sum = 0;
+    long long  digit = 0;
 
-    stringstream ss(s);
-    while (ss >> number){
-        sum += number;
+    cin >> equation;
+    int i = -1;
+    while (equation[++i]){
+        if (isdigit(equation[i]))
+            digit = (digit * 10) + (equation[i] - '0');
+        else if (equation[i] == '+')
+        {
+            sum += digit;
+            digit = 0;
+        }
     }
-
-    cout << "sum=" << sum << endl;
-    return 0;
+    sum += digit;
+    cout << sum << endl;
+    return (0);
 }

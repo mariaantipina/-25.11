@@ -12,8 +12,8 @@ bool isSymmetric(const string& str)
 int main(){
     setlocale(LC_ALL, "Russian");
     string s;
-    cout << "ââåäèòå ñëîâî:" << endl;
+    cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»Ð¾Ð²Ð¾:" << endl;
     getline(cin, s);
-    cout << (isSymmetric(s) ? " - ïàëèíäðîì" : " - îáû÷íàÿ ñòðîêà");
+    cout << (isSymmetric(s) ? " - Ð¿Ð°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼" : " - Ð¾Ð±Ñ‹Ñ‡Ð½Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°");
     return 0;
 }

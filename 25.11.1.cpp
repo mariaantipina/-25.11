@@ -1,19 +1,19 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
-bool isSymmetric(const string& str)
+int main()
 {
-    int start = 0, end = str.size() - 1;
-    while (start < end)
-        if (str[start++] != str[end--])
-            return false;
-    return true;
-}
-int main(){
+    char word[500];
+
     setlocale(LC_ALL, "Russian");
-    string s;
-    cout << "введите слово:" << endl;
-    getline(cin, s);
-    cout << (isSymmetric(s) ? " - палиндром" : " - обычная строка");
-    return 0;
+    setlocale(LC_ALL,".1251");
+    cin >> word;
+    for (int i = 0; i < strlen(word) / 2; i++) {
+        if (word[i] != word[strlen(word) - i - 1]) {
+            cout << "false" << endl;
+            return (1);
+        }
+    }
+    cout << "true" << endl;
+    return (0);
 }
